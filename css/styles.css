@@ -141,9 +141,10 @@ a {
 }
 
 .site-nav {
+  flex-wrap: wrap;
   display: flex;
   flex-shrink: 0;
-  gap: 54px;
+  gap: 20px 36px;
   padding-top: 18px;
   font-family: var(--font-sans);
   font-size: 20px;
@@ -587,7 +588,7 @@ a {
 
 .site-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   gap: 12px;
   padding: 24px 0 26px;
@@ -604,7 +605,7 @@ a {
 }
 
 .site-footer > :nth-child(2) {
-  text-align: center;
+  text-align: right;
 }
 
 .site-footer > :nth-child(3) {
@@ -846,7 +847,7 @@ body.is-card-hover a {
   }
 
   .site-footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 6px;
     font-size: 16px;
     padding-bottom: 20px;
@@ -854,7 +855,7 @@ body.is-card-hover a {
 
   .site-footer > :nth-child(2),
   .site-footer > :nth-child(3) {
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -2049,4 +2050,144 @@ body:has(.case-especimen) {
   .mi-devices .mi-phone {
     width: min(46%, 280px);
   }
+}
+
+/* Eines */
+.eines {
+  width: min(100%, 1200px);
+  margin: 96px auto 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.eines-eyebrow {
+  margin: 0 0 28px;
+  font: 14px/1.5 var(--font-sans);
+}
+
+.eines h1 {
+  margin: 0;
+  font: 400 clamp(52px, 5.5vw, 88px)/0.98 var(--font-serif);
+  letter-spacing: -0.03em;
+}
+
+.eines-lead {
+  max-width: 360px;
+  margin: 32px 0 0;
+  font-size: 25px;
+  line-height: 1.35;
+}
+
+.eines-group {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 20px;
+  border-top: 1px solid var(--ink);
+  padding: 26px 0 32px;
+}
+
+.eines-number {
+  padding-top: 3px;
+  font: 13px/1.5 var(--font-sans);
+}
+
+.eines-group h2,
+.eines-group h3 {
+  margin: 0 0 10px;
+  font: 400 23px/1.25 var(--font-sans);
+}
+
+.eines-group p {
+  margin: 0 0 20px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.eines-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.eines-list li {
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  padding: 8px 14px;
+  font: 14px/1.2 var(--font-sans);
+}
+
+@media (max-width: 900px) {
+  .eines {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin: 64px auto 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .site-nav {
+    width: 100%;
+    padding-top: 12px;
+    gap: 16px 24px;
+  }
+
+  .eines-group {
+    gap: 12px;
+  }
+}
+
+.sobre-eines { width: 100%; margin-top: 72px; }
+.sobre-eines > h2 { margin: 0 0 32px; font: 400 clamp(40px, 6vw, 64px)/1.1 var(--font-serif); }
+
+.site-footer > a { overflow-wrap: anywhere; }
+
+/* Sobre mi: a continuous column from presentation to tools. */
+.sobre {
+  display: block;
+  width: min(820px, 100%);
+  margin: 80px auto 0;
+  padding-bottom: 64px;
+}
+.sobre-intro { display: block; }
+.sobre-label { margin: 0 0 20px; font: 14px/1.4 var(--font-sans); }
+.sobre-name {
+  margin: 0;
+  font: 400 clamp(30px, 4vw, 44px)/1.15 var(--font-sans);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.sobre-location { margin: 14px 0 36px; font: 20px/1.4 var(--font-serif); }
+.sobre-copy { font-size: clamp(22px, 2.5vw, 28px); line-height: 1.4; }
+.sobre-copy .sobre-lead { margin-bottom: 24px; font-size: inherit; line-height: inherit; }
+.sobre-copy p + p { margin-top: 24px; }
+.sobre-copy p.sobre-invite {
+  width: 100%;
+  margin: 32px 0 0;
+  font: 20px/1.5 var(--font-sans);
+}
+.sobre-eines { margin-top: 120px; padding-top: 40px; }
+.sobre-tools-heading { margin-bottom: 28px; }
+.sobre-tools-heading h2 { margin: 0 0 12px; font: 400 40px/1.1 var(--font-serif); }
+.sobre-tools-heading p { margin: 0; font: 21px/1.4 var(--font-serif); }
+.sobre-eines .eines-groups { display: block; }
+.sobre-eines .eines-group { display: block; padding: 22px 0; }
+.sobre-eines .eines-number { display: none; }
+.sobre-eines .eines-group h3 { font-size: 20px; }
+.sobre-eines .eines-group p { margin-bottom: 14px; font-size: 20px; }
+.sobre-eines .eines-list { gap: 8px 18px; }
+.sobre-eines .eines-list li { border: 0; border-radius: 0; padding: 0; font-size: 16px; line-height: 1.5; }
+.page:has(.sobre) .site-footer { padding: 24px 0 26px; }
+@media (max-width: 600px) {
+  .sobre { margin-top: 48px; padding-bottom: 40px; }
+  .sobre-location { margin-bottom: 28px; }
+  .sobre-eines { margin-top: 80px; padding-top: 32px; }
 }
